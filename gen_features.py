@@ -5,6 +5,7 @@ from PIL import Image
 import argparse
 import configs
 from model import VIT_MSN
+from tqdm import tqdm
 
 def run(list_file, output_folder, batch_size=64):
     features = []
@@ -14,7 +15,7 @@ def run(list_file, output_folder, batch_size=64):
     feature_batch = []
 
     num = 0
-    for idx, img_path in enumerate(list_file):
+    for idx, img_path in tqdm(enumerate(list_file), desc='Gen features: '):
         num += 1 
         img = Image.open(img_path).convert('RGB')
         img_name = os.path.basename(img_path)
@@ -50,7 +51,6 @@ if __name__ == '__main__':
     list_files = os.listdir(args.input)
     list_files = [os.path.join(args.input, _name) for _name in list_files]
     output_folder = args.output
-    
+
     os.makedirs(output_folder, exist_ok=True)
-    list_files = list_files[:100]
     run(list_file=list_files, output_folder=output_folder, batch_size=16)
