@@ -35,8 +35,8 @@ SCORE_KEY = "score"
 IMG_LIST_FILE_KEY = 'candidate_ids'
 DATABASE_KEY = 'DATABASE'
 IMAGE_QUEUE = 'image_queue'
-IMAGE_LIST_PATH = 'master_data/candidate_ids.txt'
-FEATURE_PATH = 'master_data/features.npy'
+IMAGE_LIST_PATH = 'mmt_features/candidate_ids.txt'
+FEATURE_PATH = 'mmt_features/features.npy'
 NR_RETR_KEY = 'nr_retr'
 QUERY_IMAGE_FOLDER = 'query_images'
 # logger info
