@@ -1,1 +1,1 @@
-# mmt_demo
+# Demo computer network system (Image Retrieval System)
